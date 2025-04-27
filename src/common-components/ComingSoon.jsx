@@ -1,33 +1,31 @@
-import { Link, useLocation } from "react-router-dom";
+import { Link } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Home() {
-  const location = useLocation();
-  const { username } = location.state || { username: "Guest" };
-
+const ComingSoon = ({ sectionName }) => {
   return (
     <div className="bg-yellow-100 min-h-screen flex flex-col items-center justify-center">
       <div className="bg-white shadow-lg rounded-2xl border border-orange-300 p-8 max-w-3xl text-center">
         <h1 className="text-4xl font-bold text-orange-600 mb-4">
-          Welcome to CyberShield!
+          {sectionName} - Coming Soon!
         </h1>
-        <p className="text-xl text-orange-700 font-medium">
-          Hello, <span className="text-orange-500">{username}</span>! We&apos;re glad to have you here.
+        <p className="text-lg text-gray-700">
+          We&apos;re working hard to bring you the <span className="font-semibold text-orange-500">{sectionName}</span> section. Stay tuned for updates!
         </p>
-        <p className="mt-4 text-gray-700">
-          CyberShield is your one-stop platform for enhancing your cyber security awareness. Explore our quizzes, forums, and resources to stay safe online.
+        <p className="mt-4 text-gray-600">
+          In the meantime, feel free to explore other sections of CyberShield.
         </p>
         <div className="mt-6 flex justify-center gap-4">
+          <Link
+            to="/"
+            className="bg-orange-400 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition font-semibold"
+          >
+            Go to Home
+          </Link>
           <Link
             to="/quiz"
             className="bg-orange-400 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition font-semibold"
           >
             Take a Quiz
-          </Link>
-          <Link
-            to="/forum"
-            className="bg-orange-400 text-white px-6 py-3 rounded-lg hover:bg-orange-500 transition font-semibold"
-          >
-            Join the Forum
           </Link>
         </div>
       </div>
@@ -36,6 +34,9 @@ function Home() {
       </footer>
     </div>
   );
-}
+};
+ComingSoon.propTypes = {
+  sectionName: PropTypes.string.isRequired,
+};
 
-export default Home;
+export default ComingSoon;

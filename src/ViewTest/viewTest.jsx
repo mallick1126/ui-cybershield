@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { endpoints, handleApiError } from "../config";
+import { handleApiError } from "../utils/AxiosUtil";
+import { endpoints } from "../utils/endpoints";
 import { useLocation } from "react-router-dom";
 import "./viewTest.css";
 const ViewTest = () => {

@@ -1,5 +1,7 @@
+import ComingSoon from "../common-components/ComingSoon";
+
 function Feed() {
-  return <div>Welcome to CyberShield Feed!</div>;
+  return <ComingSoon sectionName="Feed"></ComingSoon>;
 }
 
 export default Feed;

@@ -1,19 +1,23 @@
 /* General styles for the navbar */
 .navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background-color: #fffbea; /* Soft background color */
-  border-bottom: 1px solid #f0e9d2; /* Subtle bottom border */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  background-color: #fffbea;
+  border-bottom: 1px solid #f0e9d2;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
-  z-index: 100;
-  box-sizing: border-box; /* Ensure padding doesn't cause overflow */
-  overflow: hidden; /* Hide overflow */
+  z-index: 1000;
+  padding: 15px 30px;
+  max-height: 15vh;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 /* Logo styling */
@@ -21,25 +25,21 @@
   font-size: 1.8rem;
   font-weight: bold;
   margin: 0;
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 5px;
 }
 
 .quiz {
-  color: #000; /* Black color for Quiz */
+  color: #000;
 }
 
 .grad {
-  color: #ffc107; /* Yellow color for Grad */
+  color: #ffc107;
 }
 
 /* Links styling */
 .navbar-links {
   list-style: none;
   display: flex;
-  gap: 30px;
+  gap: 25px;
   margin: 0;
   padding: 0;
 }
@@ -50,32 +50,44 @@
 
 .link {
   text-decoration: none;
-  color: #ccc; /* Light gray for links */
-  font-size: 1.2rem;
+  color: #555;
+  font-size: 1.1rem;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
-.link.active,
-.link:hover {
-  color: #000; /* Black on active or hover */
+.link:hover,
+.link.active {
+  color: #000;
   font-weight: bold;
 }
 
 /* Login button styling */
 .login-btn {
-  background-color: transparent;
-  color: #ffc107;
-  border: 2px solid #ffc107;
+  background-color: #ffc107;
+  color: #fff;
+  border: none;
   padding: 8px 15px;
   font-size: 1rem;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
   transition: all 0.3s ease-in-out;
+  text-decoration: none;
 }
 
 .login-btn:hover {
-  background-color: #ffc107;
-  color: #fff;
+  background-color: #ffb300;
+}
+
+/* Hamburger menu button */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  color: #555;
 }
 
 /* Responsive adjustments */
@@ -91,26 +103,33 @@
   .navbar-links {
     gap: 20px;
   }
-
-  .login-btn {
-    font-size: 0.9rem;
-  }
 }
 
 @media screen and (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 20px;
+  .menu-toggle {
+    display: block;
   }
 
   .navbar-links {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: #fffbea;
     flex-direction: column;
+    align-items: center;
     gap: 15px;
-    margin-top: 15px;
+    padding: 20px;
+    display: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  .navbar-links.open {
+    display: flex;
   }
 
   .login-btn {
-    margin-top: 15px;
+    width: 100%;
+    text-align: center;
   }
 }

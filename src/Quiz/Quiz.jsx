@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
 import "./Quiz.css";
-import { endpoints, handleApiError } from "../config";
-import Dialog from "../utils/Dialog/Dialog";
+import { handleApiError } from "../utils/AxiosUtil";
+import { endpoints } from "../utils/endpoints";
+import Dialog from "../common-components/Dialog/Dialog";
 import { useNavigate } from "react-router-dom";
 
 const Quiz = () => {

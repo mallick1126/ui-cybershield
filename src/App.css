@@ -1,13 +1,11 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* .App {
   font-family: Arial, sans-serif;
   text-align: center;
 }
-
-
 
 .quiz {
   margin-top: 20px;

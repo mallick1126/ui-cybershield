@@ -1,5 +1,7 @@
+import ComingSoon from "../common-components/ComingSoon";
+
 function Forum() {
-  return <div>Welcome to CyberShield Forum!</div>;
+  return <ComingSoon sectionName="Forum"></ComingSoon>;
 }
 
 export default Forum;

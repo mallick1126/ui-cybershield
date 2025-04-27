@@ -6,7 +6,7 @@ const ProtectedRoute = ({ children }) => {
   const hasValidAccess = sessionStorage.getItem("testSubmitted") === "true";
 
   if (!hasValidAccess) {
-    return <Navigate to="/" replace />;
+    return <Navigate to="/auth/login" replace />;
   }
 
   return children;
